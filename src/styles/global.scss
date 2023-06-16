@@ -1,8 +1,28 @@
 @use './vars';
 
+@font-face {
+  font-family: 'SB Sans Interface Regular';
+  src: url('../assets/fonts/SBSansInterface-Regular.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SB Sans Interface Semibold';
+  src: url('../assets/fonts/SBSansDisplaySemiBold.woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SB Sans Mono';
+  src: url('../assets/fonts/SBSansDisplayRegular.woff2');
+  font-weight: 400;
+}
+
 body {
   margin: 0;
-  font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+  font-family: 'SB Sans Interface Regular', Arial, sans-serif,sans-serif;
+  background-color: vars.$lightGray;
+  min-height: 100vh;
 }
 
 * {
@@ -25,7 +45,41 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 900px;
 	padding: 0 20px;
-  margin: 0 auto;
+  margin: 24px auto 0;
+  background-color: vars.$white;
+  border-radius: 12px 12px 0px 0px;
+
+  // border: 1px solid red;
+}
+
+.input {
+  margin: 8px 0 0 0;
+  display: block;
+  max-width: 300px;
+  height: 44px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.lbl {
+  display: block;
+  margin: 0 0 24px 0;
+  font-size: 14px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  background-color: vars.$blue;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  color: vars.$white;
+  text-decoration: none;
 }

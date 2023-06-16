@@ -1,7 +1,11 @@
 @use './global.scss';
 @use './vars.scss';
 @use '../components/App/App.scss';
-@use '../components/Layout/Layout.scss';
-@use '../components/Footer/Footer.scss';
+@use '../components/FormLayout/FormLayout.scss';
+@use '../components/Header/Header.scss';
+@use '../pages/HomePage/HomePage.scss';
+
+// @use '../pages/InfoTab/InfoTab.scss';
+
 
 

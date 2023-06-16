@@ -1,15 +1,13 @@
 import { Outlet } from 'react-router-dom';
-import { Footer } from '../Footer';
 import { Header } from '../Header';
 
-export function Layout() {
+export function FormLayout() {
   return (
-    <div className="layout">
+    <div className="form">
       <Header></Header>
-      <main className="layout__main">
+      <main className="form__main">
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 }

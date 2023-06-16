@@ -1,0 +1,53 @@
+@use '../../styles/vars';
+.home {
+	padding-bottom: 80px;
+	.user {
+		display: flex;
+		align-items: center;
+		padding: 24px 0;
+		color: vars.$gray;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	
+		&__avatar {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			display:  flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 24px 0 0;
+			font-family: 'SB Sans Mono';
+			font-size: 40px;
+			background-color: vars.$lightBlue;
+			color: vars.$blueGray;
+		}
+		&__name {
+			font-family: 'SB Sans Interface Semibold';
+			font-weight: 600;
+			margin: 0 0 8px 0;
+		}
+	
+		&__links {
+			display: flex;
+			justify-content: space-between;
+		}
+	
+		&__link {
+			list-style: none;
+			margin: 0 16px 0 0;
+			&::before {
+				content: url('../../assets/icons/folder.svg');
+				margin: 0 4px 0 0;
+			}
+			.href {
+				text-decoration: none;
+			}
+		}
+	}
+	&__form {
+		padding: 24px 0 0 0;
+		.input {
+			max-width: 400px;
+		}
+	}
+}
