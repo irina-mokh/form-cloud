@@ -67,6 +67,7 @@ body {
 }
 
 .lbl {
+  position: relative;
   display: block;
   margin: 0 0 24px 0;
   font-size: 14px;
@@ -82,4 +83,15 @@ body {
   line-height: 20px;
   color: vars.$white;
   text-decoration: none;
+  &_disabled {
+    background-color: vars.$darkGray;
+  }
+}
+
+.err {
+  position: absolute;
+  bottom: -20px;
+  font-size: 12px;
+  left: 0;
+  color: vars.$gray;
 }
