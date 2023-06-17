@@ -50,28 +50,6 @@ body {
   margin: 24px auto 0;
   background-color: vars.$white;
   border-radius: 12px 12px 0px 0px;
-
-  // border: 1px solid red;
-}
-
-.input {
-  margin: 8px 0 0 0;
-  display: block;
-  max-width: 300px;
-  height: 44px;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 4px;
-  width: 100%;
-}
-
-.lbl {
-  position: relative;
-  display: block;
-  margin: 0 0 24px 0;
-  font-size: 14px;
-  width: 100%;
 }
 
 .btn {
@@ -86,12 +64,4 @@ body {
   &_disabled {
     background-color: vars.$darkGray;
   }
-}
-
-.err {
-  position: absolute;
-  bottom: -20px;
-  font-size: 12px;
-  left: 0;
-  color: vars.$gray;
 }
