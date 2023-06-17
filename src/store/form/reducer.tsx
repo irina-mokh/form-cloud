@@ -5,6 +5,10 @@ import { IFormState } from '../../types';
 const initialState: IFormState = {
   tel: '',
   email: '',
+  nickname: '',
+  surname: '',
+  name: '',
+  sex: '',
 };
 
 export const formSlice = createSlice({

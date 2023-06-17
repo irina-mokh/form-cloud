@@ -1,9 +1,9 @@
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import { FormLayout } from '../FormLayout';
 import { HomePage } from '../../pages/HomePage';
-import { DetailsTab } from '../../pages/DetailsTab';
-import { TextTab } from '../../pages/TextTab';
-import { InfoTab } from '../../pages/InfoTab';
+import { Tab1 } from '../../pages/Tab1';
+import { Tab2 } from '../../pages/Tab2';
+import { Tab3 } from '../../pages/Tab3';
 
 export interface IDevInfo {
   firstName: string;
@@ -29,9 +29,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage dev={developer} />} />
           <Route path="form" element={<FormLayout />}>
-            <Route index element={<InfoTab />} />
-            <Route path="details" element={<DetailsTab />} />
-            <Route path="text" element={<TextTab />} />
+            <Route path="0" element={<Tab1 />} />
+            <Route path="1" element={<Tab2 />} />
+            <Route path="2" element={<Tab3 />} />
           </Route>
         </Routes>
       </Router>

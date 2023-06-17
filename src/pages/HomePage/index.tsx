@@ -98,7 +98,7 @@ export const HomePage = ({ dev }: HomePageProps) => {
             }}
           />
         </form>
-        <NavBtn path="form" isValid={isValid} text="Начать" />
+        <NavBtn path="form/0" isValid={isValid} text="Начать" />
       </div>
     </FormProvider>
   );

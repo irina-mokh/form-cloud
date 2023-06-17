@@ -6,9 +6,14 @@ import { IInfoInputs } from '../../types';
 import { useEffect } from 'react';
 import { CustomInput } from '../../components/CustomInput';
 import { NavBtnsBar } from '../../components/NavBtnsBar';
+import { useSelector } from 'react-redux';
+import { selectForm } from '../../store/form/selectors';
+import { setPageActive } from '../../store/main/reducer';
 
-export const InfoTab = () => {
+export const Tab1 = () => {
   const dispatch: AppDispatch = useDispatch();
+
+  const { sex } = useSelector(selectForm);
 
   const methods = useForm<IInfoInputs>({
     mode: 'onChange',
@@ -18,6 +23,10 @@ export const InfoTab = () => {
     watch,
     formState: { isValid },
   } = methods;
+
+  useEffect(() => {
+    dispatch(setPageActive(0));
+  }, []);
 
   useEffect(() => {
     const subscription = watch((form) => {
@@ -62,13 +71,13 @@ export const InfoTab = () => {
             }}
           />
           <label htmlFor="sex">Sex</label>
-          <select className="input" id="sex" {...register('sex', { required: true })}>
+          <select className="input" id="sex" {...register('sex', { required: true })} value={sex}>
             <option value="">Please choose an option</option>
             <option value="man">man</option>
             <option value="woman">woman</option>
           </select>
         </form>
-        <NavBtnsBar pathBack="/" pathForward="details" isValid={isValid} />
+        <NavBtnsBar pathBack="/" pathForward="/form/1" isValid={isValid} />
       </div>
     </FormProvider>
   );

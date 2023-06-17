@@ -19,7 +19,6 @@ export const CustomInput = ({ lbl, type, name, options, placeholder }: CustomInp
 
   const formState = useSelector(selectForm);
 
-  console.log(formState);
   return (
     <label className="lbl" htmlFor={name}>
       {lbl}

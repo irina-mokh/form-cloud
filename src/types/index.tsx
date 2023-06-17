@@ -3,22 +3,25 @@ export interface IHomeInputs {
   email: string;
 }
 
-enum SexType {
-  Female,
-  Male,
-}
 export interface IInfoInputs {
   nickname: string;
   name: string;
   surname: string;
-  sex: SexType;
+  sex: 'man' | 'woman' | '';
 }
 
-export interface IFormState extends IHomeInputs {}
+type PageType = {
+  path: string,
+  isReady: boolean,
+};
+
+export interface IFormState extends IHomeInputs, IInfoInputs {}
 
 export interface IMainState {
   error: boolean;
   isLoading: boolean;
+  pages: Array<PageType>;
+  curPage: number;
 }
 
 export interface RootState {
