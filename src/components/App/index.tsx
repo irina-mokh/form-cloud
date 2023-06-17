@@ -23,7 +23,7 @@ const developer: IDevInfo = {
 
 function App() {
   return (
-    <>
+    <div className="container">
       <h1 className="visually-hidden">User form</h1>
       <Router>
         <Routes>
@@ -35,7 +35,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 

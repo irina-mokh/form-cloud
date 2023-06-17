@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
-import { IDevInfo } from '../../components/App';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { updateForm } from '../../store/form/reducer';
-import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store';
-import { IHomeInputs } from '../../types';
 import { selectForm } from '../../store/form/selectors';
-import { useSelector } from 'react-redux';
-import classNames from 'classnames';
-import { maskNumber } from '../../utils';
+
+import { IDevInfo } from '../../components/App';
 import { CustomInput } from '../../components/CustomInput';
+
+import { IHomeInputs } from '../../types';
+import { maskNumber } from '../../utils';
+import { NavBtn } from '../../components/NavBtn';
 
 type HomePageProps = {
   dev: IDevInfo,
@@ -46,14 +48,9 @@ export const HomePage = ({ dev }: HomePageProps) => {
     return () => subscription.unsubscribe();
   }, [dispatch, watch]);
 
-  const btnClass = classNames({
-    btn: true,
-    btn_disabled: !isValid,
-  });
-
   return (
     <FormProvider {...methods}>
-      <div className="home container">
+      <div className="home wrapper">
         <h2 className="visually-hidden">Info Tab</h2>
         <header className="user">
           <div className="user__avatar">{firstName[0] + lastName[0]}</div>
@@ -101,9 +98,7 @@ export const HomePage = ({ dev }: HomePageProps) => {
             }}
           />
         </form>
-        <Link to="form/info" className={btnClass}>
-          Начать
-        </Link>
+        <NavBtn path="form" isValid={isValid} text="Начать" />
       </div>
     </FormProvider>
   );

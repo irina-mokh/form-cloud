@@ -3,7 +3,7 @@ import { Header } from '../Header';
 
 export function FormLayout() {
   return (
-    <div className="form">
+    <div className="form wrapper">
       <Header></Header>
       <main className="form__main">
         <Outlet />

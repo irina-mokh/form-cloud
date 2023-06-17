@@ -46,7 +46,12 @@ body {
 
 .container {
   max-width: 900px;
-	padding: 0 20px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.wrapper {
+  padding: 0 20px;
   margin: 24px auto 0;
   background-color: vars.$white;
   border-radius: 12px 12px 0px 0px;

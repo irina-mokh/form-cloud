@@ -6,13 +6,13 @@ export const Header = () => {
       <header className="header">
         <ul className="header__list">
           <li>
-            <Link to="form/info"></Link>
+            <Link to="/form">1</Link>
           </li>
           <li>
-            <Link to="form/details">2</Link>
+            <Link to="details">2</Link>
           </li>
           <li>
-            <Link to="form/text">3</Link>
+            <Link to="text">3</Link>
           </li>
         </ul>
       </header>
