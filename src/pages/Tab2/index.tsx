@@ -92,7 +92,6 @@ export const Tab2 = () => {
   // update store on every change
   useEffect(() => {
     const subscription = watch((form) => {
-      console.log(form);
       // collect advantages into array
       const entries = Object.entries(form);
       const advantagesArr = entries
@@ -107,7 +106,7 @@ export const Tab2 = () => {
       const formData = {
         advantages: advantagesArr,
         checkGroup: [...numCheckGroup],
-        radioGroup: form.radioGroup,
+        radioGroup: [form.radioGroup ? +form.radioGroup : null],
       };
       dispatch(updateForm(formData));
     });

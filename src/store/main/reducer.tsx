@@ -1,10 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { postForm } from '../form/actions';
+import { postForm } from './actions';
 import { IMainState } from '../../types';
 
 const initialState: IMainState = {
-  error: false,
-  isLoading: false,
+  error: null,
   curPage: 0,
   pages: [
     { path: '/form/0', isReady: false },
@@ -23,7 +22,7 @@ export const mainSlice = createSlice({
     setPageReady: (state, { payload }) => {
       const pages = state.pages.map((p, i) => {
         const newPage = p;
-        newPage.isReady = i == payload;
+        newPage.isReady = newPage.isReady || i == payload;
         return newPage;
       });
       state.pages = [...pages];
@@ -33,12 +32,13 @@ export const mainSlice = createSlice({
     builder
       // createPost
       .addCase(postForm.pending, (state) => {
-        // state.isLoading = true;
-        // state.error = null;
+        state.error = null;
       })
       .addCase(postForm.fulfilled, (state) => {
-        // state.isLoading = false;
-        // state.error = null;
+        state.error = null;
+      })
+      .addCase(postForm.rejected, (state, { payload }) => {
+        state.error = String(payload);
       });
   },
 });

@@ -10,6 +10,10 @@ export interface IInfoInputs {
   sex: 'man' | 'woman' | '';
 }
 
+export interface ITextInputs {
+  about: string;
+}
+
 export interface IGroupInputs {
   advantages: Array<string>;
   checkGroup: Array<number>;
@@ -21,11 +25,10 @@ type PageType = {
   isReady: boolean,
 };
 
-export interface IFormState extends IHomeInputs, IInfoInputs, IGroupInputs {}
+export interface IFormState extends IHomeInputs, IInfoInputs, IGroupInputs, ITextInputs {}
 
 export interface IMainState {
-  error: boolean;
-  isLoading: boolean;
+  error: string | null;
   pages: Array<PageType>;
   curPage: number;
 }

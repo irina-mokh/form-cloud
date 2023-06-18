@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { postForm } from './actions';
 import { IFormState } from '../../types';
 
 const initialState: IFormState = {
@@ -12,6 +11,7 @@ const initialState: IFormState = {
   advantages: [''],
   radioGroup: [],
   checkGroup: [],
+  about: '',
 };
 
 export const formSlice = createSlice({
@@ -30,21 +30,12 @@ export const formSlice = createSlice({
       newArr.splice(i, 1);
       state.advantages = [...newArr];
     },
-  },
-  extraReducers: (builder) => {
-    builder
-      // createPost
-      .addCase(postForm.pending, (state) => {
-        // state.isLoading = true;
-        // state.error = null;
-      })
-      .addCase(postForm.fulfilled, (state) => {
-        // state.isLoading = false;
-        // state.error = null;
-      });
+    clearForm: (state) => {
+      state = initialState;
+    },
   },
 });
 
-export const { updateForm, addField, deleteField } = formSlice.actions;
+export const { updateForm, addField, deleteField, clearForm } = formSlice.actions;
 
 export default formSlice.reducer;
