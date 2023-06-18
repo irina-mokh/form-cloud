@@ -30,7 +30,7 @@ export const formSlice = createSlice({
       newArr.splice(i, 1);
       state.advantages = [...newArr];
     },
-    clearForm: (state) => {
+    clearForm: () => {
       return { ...initialState };
     },
   },
