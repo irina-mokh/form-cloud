@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
-import { NavBtnsBar } from '../../components/NavBtnsBar';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../store';
-import { setPageActive, setPageReady } from '../../store/main/reducer';
+import { useSelector, useDispatch } from 'react-redux';
 import { FormProvider, useForm } from 'react-hook-form';
-import { IGroupInputs } from '../../types';
-import { addField, deleteField, updateForm } from '../../store/form/reducer';
-import { InputField } from '../../components/InputField';
-import { useSelector } from 'react-redux';
+
+import { AppDispatch } from '../../store';
 import { selectForm } from '../../store/form/selectors';
+import { setPageActive, setPageReady } from '../../store/main/reducer';
+import { addField, deleteField, updateForm } from '../../store/form/reducer';
+
+import { NavBtnsBar } from '../../components/NavBtnsBar';
+import { InputField } from '../../components/InputField';
+
+import { IGroupInputs } from '../../types';
 
 const CHECK_GROUP = [1, 2, 3];
 const RADIO_GROUP = [1, 2, 3];
@@ -42,7 +44,7 @@ export const Tab2 = () => {
         options={{}}
       ></InputField>
       <button
-        className="btn_delete"
+        className="btn-delete"
         onClick={(e) => {
           e.preventDefault();
           dispatch(deleteField(i));
@@ -121,7 +123,7 @@ export const Tab2 = () => {
           <fieldset className="fieldset">
             <legend>Advantages</legend>
             <ul>{fields}</ul>
-            <button className="btn btn_add" onClick={handleAddField}>
+            <button className="btn" onClick={handleAddField}>
               +
             </button>
           </fieldset>

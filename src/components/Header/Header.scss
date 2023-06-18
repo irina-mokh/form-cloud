@@ -16,7 +16,6 @@
 		width: 100%;
 		overflow: hidden;
 		accent-color: vars.$blue;
-
 		&::-webkit-slider-runnable-track, &::-moz-range-track {
 			height: 10px;
 		}
@@ -27,6 +26,7 @@
 		position: relative;
 		padding: 5px 2px;
 		cursor: pointer;
+
 		&__radio {
 			display: none;
 		}
@@ -42,6 +42,7 @@
 			z-index: 0;
 			cursor: pointer;
 		}
+
 		&_active, &_ready {
 			color: vars.$blue;
 			&::before {
@@ -50,9 +51,7 @@
 		}
 
 		&_ready {
-			
 			&::before {
-
 				background-image: url('../../assets/icons/check.svg');
 				background-repeat: no-repeat;
 				background-position: center 4px;

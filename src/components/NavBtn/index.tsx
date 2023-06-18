@@ -6,6 +6,7 @@ type NavBtnProps = {
   path: string,
   text: string,
 };
+
 export const NavBtn = ({ isValid, path, text }: NavBtnProps) => {
   const btnClass = classNames({
     btn: true,

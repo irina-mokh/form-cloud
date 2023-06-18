@@ -47,26 +47,35 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 24px 15px 0 15px;
 }
 
 .wrapper {
   padding: 0 20px;
-  margin: 24px auto 0;
+  margin: 0 auto;
   background-color: vars.$white;
   border-radius: 12px 12px 0px 0px;
 }
 
 .btn {
   display: inline-block;
-  background-color: vars.$blue;
   padding: 12px 16px;
+  border: 1px solid vars.$blue;
   border-radius: 4px;
+  outline: none;
   font-size: 14px;
   line-height: 20px;
-  color: vars.$white;
+  color: vars.$blue;
   text-decoration: none;
+  background-color: transparent;
+
+  &:hover:not(.btn_disabled) {
+    background-color: vars.$blue;
+    color: vars.$white;
+  }
+
   &_disabled {
-    background-color: vars.$darkGray;
+    border-color: vars.$darkGray;
+    color: vars.$darkGray;
   }
 }

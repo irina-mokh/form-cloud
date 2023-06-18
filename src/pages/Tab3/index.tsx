@@ -1,16 +1,19 @@
-import { useDispatch } from 'react-redux';
-import { setPageActive, setPageReady } from '../../store/main/reducer';
+import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { AppDispatch } from '../../store';
+import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
-import { ITextInputs } from '../../types';
-import { NavBtn } from '../../components/NavBtn';
+
+import { AppDispatch } from '../../store';
+import { setPageActive, setPageReady } from '../../store/main/reducer';
 import { clearForm, updateForm } from '../../store/form/reducer';
-import { useSelector } from 'react-redux';
 import { selectForm } from '../../store/form/selectors';
 import { postForm } from '../../store/main/actions';
 import { selectMain } from '../../store/main/selectors';
+
+import { NavBtn } from '../../components/NavBtn';
 import { Modal } from '../../components/Modal';
+
+import { ITextInputs } from '../../types';
 
 export const Tab3 = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -25,10 +28,10 @@ export const Tab3 = () => {
     dispatch(setPageReady(1));
   }, []);
 
-  const [symbols, setSymbols] = useState(0);
-  const [spaces, setSpaces] = useState(0);
+  const [symbols, setSymbols] = useState(formState.about.trim().length);
+  const [spaces, setSpaces] = useState(formState.about.lastIndexOf.length - symbols);
 
-  const methods = useForm<ITextInputs>({});
+  const methods = useForm<ITextInputs>({ mode: 'onChange' });
   const {
     register,
     formState: { isValid, errors },
@@ -49,10 +52,16 @@ export const Tab3 = () => {
     e.preventDefault();
     if (isValid) {
       dispatch(postForm(formState));
-      dispatch(clearForm);
+      dispatch(clearForm());
       setIsModal(true);
     }
   };
+
+  const submitBtnClass = classNames({
+    btn: true,
+    'btn-submit': true,
+    btn_disabled: !isValid,
+  });
   return (
     <div className="tab">
       {isModal && <Modal error={!!error} close={closeModal} />}
@@ -67,7 +76,7 @@ export const Tab3 = () => {
             {...register('about', {
               onChange: handleChange,
               required: true,
-              maxLength: { value: symbols + spaces, message: 'Max length 200 symbols' },
+              maxLength: { value: 200 + spaces, message: 'Max length 200 symbols' },
             })}
           ></textarea>
           <p className="counter">{`${200 - symbols} / 200`}</p>
@@ -75,7 +84,7 @@ export const Tab3 = () => {
         </div>
         <div className="tab__btns">
           <NavBtn isValid path="/form/1" text="Назад"></NavBtn>
-          <button className="btn btn_submit" onClick={handleSubmitForm}>
+          <button className={submitBtnClass} onClick={handleSubmitForm}>
             Отправить
           </button>
         </div>

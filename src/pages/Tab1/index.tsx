@@ -1,14 +1,16 @@
-import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { FormProvider, useForm } from 'react-hook-form';
+
 import { AppDispatch } from '../../store';
 import { updateForm } from '../../store/form/reducer';
-import { FormProvider, useForm } from 'react-hook-form';
-import { IInfoInputs } from '../../types';
-import { useEffect } from 'react';
-import { InputField } from '../../components/InputField';
-import { NavBtnsBar } from '../../components/NavBtnsBar';
-import { useSelector } from 'react-redux';
 import { selectForm } from '../../store/form/selectors';
 import { setPageActive } from '../../store/main/reducer';
+
+import { InputField } from '../../components/InputField';
+import { NavBtnsBar } from '../../components/NavBtnsBar';
+
+import { IInfoInputs } from '../../types';
 
 export const Tab1 = () => {
   const dispatch: AppDispatch = useDispatch();

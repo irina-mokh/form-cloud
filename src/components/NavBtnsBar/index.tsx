@@ -5,6 +5,7 @@ type NavBtnsBarProps = {
   pathForward: string,
   isValid: boolean,
 };
+
 export const NavBtnsBar = ({ pathBack, pathForward, isValid }: NavBtnsBarProps) => {
   return (
     <nav className="nav-btns-bar">

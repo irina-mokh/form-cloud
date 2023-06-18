@@ -31,7 +31,7 @@ export const formSlice = createSlice({
       state.advantages = [...newArr];
     },
     clearForm: (state) => {
-      state = initialState;
+      return { ...initialState };
     },
   },
 });

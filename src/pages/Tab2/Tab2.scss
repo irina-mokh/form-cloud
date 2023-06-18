@@ -1,26 +1,21 @@
 @use '../../styles/vars';
 
-.btn {
-	&_add {
+.btn-delete {
+	width: 20px;
+	height: 20px;
+	display: block;
+	padding: 5px;
+	margin: 0 0 0 16px;
+	background-image: url('../../assets/icons/delete.svg');
+	background-repeat: no-repeat;
 	border: none;
-	}
-	&_delete {
-		width: 20px;
-		height: 20px;
-		display: block;
-		padding: 5px;
-		background-image: url('../../assets/icons/delete.svg');
-		background-repeat: no-repeat;
-		border: none;
-		background-color: transparent;
-		margin: 0 0 0 16px;
-		cursor: pointer;
-	}
+	background-color: transparent;
+	cursor: pointer;
 }
 
 .fieldset {
-	border: none;
 	margin: 0 0 24px 0;
+	border: none;
 	&__item {
 		list-style: none;
 		display: flex;
