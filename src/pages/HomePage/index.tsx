@@ -78,6 +78,7 @@ export const HomePage = ({ dev }: HomePageProps) => {
         <form className="home__form">
           <InputField
             name="email"
+            id="email"
             lbl="Email"
             type="email"
             placeholder="tim.jennings@example.com"
@@ -89,6 +90,7 @@ export const HomePage = ({ dev }: HomePageProps) => {
           />
           <InputField
             name="tel"
+            id="tel"
             lbl="Номер телефона"
             type="text"
             placeholder="+7 (999) 999-99-99"

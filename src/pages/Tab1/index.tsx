@@ -42,6 +42,7 @@ export const Tab1 = () => {
         <form className="tab__form">
           <InputField
             name="nickname"
+            id="field-nickname"
             lbl="Nickname"
             type="text"
             placeholder="Moonpie"
@@ -52,6 +53,7 @@ export const Tab1 = () => {
           />
           <InputField
             name="name"
+            id="field-name"
             lbl="Name"
             type="text"
             placeholder="Sheldon"
@@ -62,6 +64,7 @@ export const Tab1 = () => {
           />
           <InputField
             name="surname"
+            id="field-surname"
             lbl="Surname"
             type="text"
             placeholder="Cooper"
@@ -75,7 +78,7 @@ export const Tab1 = () => {
           </label>
           <select
             className="input__field"
-            id="sex"
+            id="field-sex"
             {...register('sex', { required: true })}
             value={sex}
           >

@@ -1,3 +1,5 @@
+@use '../../styles/vars';
+
 .btn {
 	&_add {
 	border: none;
@@ -18,6 +20,7 @@
 
 .fieldset {
 	border: none;
+	margin: 0 0 24px 0;
 	&__item {
 		list-style: none;
 		display: flex;
@@ -26,4 +29,36 @@
 			margin-bottom: 8px;
 		}
 	}
+}
+
+.checkbox, .radio {
+	&__input {
+		display: none;
+	}
+	&__input:checked+&__lbl::before {
+		background-color: vars.$blue;
+		box-shadow: inset 0 0 0 2px vars.$white;
+		border-color: vars.$blue;
+	}
+	&__lbl {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		&::before {
+			content: '';
+			display: inline-block;
+			box-sizing: border-box;
+			width: 16px;
+			height: 16px;
+			margin: 0 10px 0 0;
+			border: 1.5px solid rgba(0, 0, 0, 0.24);
+		}
+	}
+}
+
+.checkbox__lbl::before {
+	border-radius: 4px;
+}
+.radio__lbl::before {
+	border-radius: 50%;
 }

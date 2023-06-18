@@ -9,9 +9,10 @@ type CustomInputProps = {
   name: string,
   placeholder: string,
   options: RegisterOptions,
+  id: string,
 };
 
-export const InputField = ({ lbl, type, name, options, placeholder }: CustomInputProps) => {
+export const InputField = ({ lbl, type, name, options, placeholder, id }: CustomInputProps) => {
   const {
     register,
     formState: { errors },
@@ -31,7 +32,7 @@ export const InputField = ({ lbl, type, name, options, placeholder }: CustomInpu
       <input
         type={type}
         value={value}
-        id={name}
+        id={id}
         className="input__field"
         placeholder={placeholder}
         {...register(name, options)}
