@@ -9,6 +9,9 @@ const initialState: IFormState = {
   surname: '',
   name: '',
   sex: '',
+  advantages: [''],
+  radioGroup: [],
+  checkGroup: [],
 };
 
 export const formSlice = createSlice({
@@ -17,6 +20,15 @@ export const formSlice = createSlice({
   reducers: {
     updateForm: (state, { payload }) => {
       return { ...state, ...payload };
+    },
+    addField: (state) => {
+      state.advantages = [...state.advantages, ''];
+    },
+    deleteField: (state, { payload }) => {
+      const i = payload;
+      const newArr = state.advantages;
+      newArr.splice(i, 1);
+      state.advantages = [...newArr];
     },
   },
   extraReducers: (builder) => {
@@ -33,6 +45,6 @@ export const formSlice = createSlice({
   },
 });
 
-export const { updateForm } = formSlice.actions;
+export const { updateForm, addField, deleteField } = formSlice.actions;
 
 export default formSlice.reducer;

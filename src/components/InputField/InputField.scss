@@ -1,0 +1,31 @@
+@use '../../styles/vars';
+
+.input {
+  position: relative;
+  margin: 0 0 24px 0;
+  &__lbl {
+    display: block;
+    font-size: 14px;
+    width: 100%;
+  }
+  &__field {
+    margin: 8px 0 0 0;
+    display: block;
+    max-width: 300px;
+    height: 44px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    width: 100%;
+  }
+  &__err {
+    position: absolute;
+    bottom: -20px;
+    font-size: 12px;
+    left: 0;
+    color: vars.$gray;
+  }
+}
+
+

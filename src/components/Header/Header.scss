@@ -11,7 +11,6 @@
 	}
 
 	&__bar {
-		cursor: pointer;
 		height: 8px;
 		border: none;
 		width: 100%;
@@ -26,7 +25,8 @@
 	.tab {
 		list-style: none;
 		position: relative;
-		padding: 2px 3px;
+		padding: 5px 2px;
+		cursor: pointer;
 		&__radio {
 			display: none;
 		}
@@ -34,20 +34,23 @@
 			content: '';
 			position: absolute;
 			top: -16px;
-			left: 0px;
+			left: 0;
 			width: 16px;
 			height: 16px;
 			border-radius: 50%;
 			background-color: #A6A6A6;
 			z-index: 0;
+			cursor: pointer;
 		}
 		&_active, &_ready {
+			color: vars.$blue;
 			&::before {
 				background-color: vars.$blue;
 			}
 		}
 
 		&_ready {
+			
 			&::before {
 
 				background-image: url('../../assets/icons/check.svg');

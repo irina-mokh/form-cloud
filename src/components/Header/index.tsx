@@ -13,7 +13,8 @@ export const Header = () => {
     const { pages, curPage } = useSelector(selectMain);
 
     const handleNavigation = (e: React.ChangeEvent<HTMLInputElement>) => {
-      if (pages[+e.target.value - 1].isReady) dispatch(setPageActive(e.target.value));
+      if (e.target.value === '0' || pages[+e.target.value - 1].isReady)
+        dispatch(setPageActive(e.target.value));
     };
     const navigate = useNavigate();
     useEffect(() => {

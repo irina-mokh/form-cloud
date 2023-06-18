@@ -1,0 +1,29 @@
+.btn {
+	&_add {
+	border: none;
+	}
+	&_delete {
+		width: 20px;
+		height: 20px;
+		display: block;
+		padding: 5px;
+		background-image: url('../../assets/icons/delete.svg');
+		background-repeat: no-repeat;
+		border: none;
+		background-color: transparent;
+		margin: 0 0 0 16px;
+		cursor: pointer;
+	}
+}
+
+.fieldset {
+	border: none;
+	&__item {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		.input{
+			margin-bottom: 8px;
+		}
+	}
+}

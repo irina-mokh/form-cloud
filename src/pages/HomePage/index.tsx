@@ -8,7 +8,7 @@ import { AppDispatch } from '../../store';
 import { selectForm } from '../../store/form/selectors';
 
 import { IDevInfo } from '../../components/App';
-import { CustomInput } from '../../components/CustomInput';
+import { InputField } from '../../components/InputField';
 
 import { IHomeInputs } from '../../types';
 import { maskNumber } from '../../utils';
@@ -76,7 +76,7 @@ export const HomePage = ({ dev }: HomePageProps) => {
           </nav>
         </header>
         <form className="home__form">
-          <CustomInput
+          <InputField
             name="email"
             lbl="Email"
             type="email"
@@ -87,7 +87,7 @@ export const HomePage = ({ dev }: HomePageProps) => {
                 /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             }}
           />
-          <CustomInput
+          <InputField
             name="tel"
             lbl="Номер телефона"
             type="text"

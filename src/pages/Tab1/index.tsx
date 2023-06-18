@@ -4,7 +4,7 @@ import { updateForm } from '../../store/form/reducer';
 import { FormProvider, useForm } from 'react-hook-form';
 import { IInfoInputs } from '../../types';
 import { useEffect } from 'react';
-import { CustomInput } from '../../components/CustomInput';
+import { InputField } from '../../components/InputField';
 import { NavBtnsBar } from '../../components/NavBtnsBar';
 import { useSelector } from 'react-redux';
 import { selectForm } from '../../store/form/selectors';
@@ -37,10 +37,10 @@ export const Tab1 = () => {
 
   return (
     <FormProvider {...methods}>
-      <div className="info">
+      <div className="tab">
         <h2 className="visually-hidden">Info Tab</h2>
-        <form className="info__form">
-          <CustomInput
+        <form className="tab__form">
+          <InputField
             name="nickname"
             lbl="Nickname"
             type="text"
@@ -50,7 +50,7 @@ export const Tab1 = () => {
               minLength: { value: 4, message: 'min 4 symbols' },
             }}
           />
-          <CustomInput
+          <InputField
             name="name"
             lbl="Name"
             type="text"
@@ -60,7 +60,7 @@ export const Tab1 = () => {
               minLength: { value: 4, message: 'min 4 symbols' },
             }}
           />
-          <CustomInput
+          <InputField
             name="surname"
             lbl="Surname"
             type="text"
@@ -70,8 +70,15 @@ export const Tab1 = () => {
               minLength: { value: 2, message: 'min 2 symbols' },
             }}
           />
-          <label htmlFor="sex">Sex</label>
-          <select className="input" id="sex" {...register('sex', { required: true })} value={sex}>
+          <label htmlFor="sex" className="input_lbl">
+            Sex
+          </label>
+          <select
+            className="input__field"
+            id="sex"
+            {...register('sex', { required: true })}
+            value={sex}
+          >
             <option value="">Please choose an option</option>
             <option value="man">man</option>
             <option value="woman">woman</option>
